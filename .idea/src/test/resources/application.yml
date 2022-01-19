@@ -1,0 +1,26 @@
+server:
+  port: 9090
+
+spring:
+  banner:
+    location: classpath:banner.txt
+  jpa:
+    hibernate:
+      use-new-id-generator-mappings: false
+#      ddl-auto: create
+    show-sql: true
+  datasource:
+    url: jdbc:mysql://localhost:3306/java_school_test?useSSL=false&createDatabaseIfNotExist=true
+    driverClassName: com.mysql.cj.jdbc.Driver
+    username: root
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.xml
+    enabled: true
+
+
+logging:
+  level:
+    net:
+      ttddyy:
+        dsproxy:
+          listener: debug
